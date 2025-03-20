@@ -16,63 +16,144 @@
             text-align: center;
             position: relative;
         }
+        .navbar {
+            background: black;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .navbar a {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .overlay {
+            position: absolute;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            color: white;
+        }
+        .overlay img {
+            width: 45%;
+            height: auto;
+            max-height: 80vh;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .overlay-text {
+            width: 50%;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .overlay-text p {
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-top: 10px;
+        }
         .container {
             width: 80%;
-            margin: 50px auto;
+            margin: 20px auto;
             background: white;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            text-align: left;
-        }
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact a {
-            font-family: 'Montserrat', sans-serif;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px;
-            display: inline-block;
+            position: relative;
+            z-index: 2;
         }
         footer {
             text-align: center;
             padding: 1rem;
             margin-top: 20px;
-            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="Humedales.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <img src="Edgar.jpg" alt="Edgar Pérez Medina">
+            <div class="overlay-text">
+                <div>Edgar Pérez Medina</div>
+                <p>Economist | Faculty of Economics, UNAM</p>
+            </div>
+        </div>
+    </div>
+    
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>
-                I am a Mexican economist and currently a Master's student in Economics at the National Autonomous University of Mexico (UNAM), where I also earned my Bachelor's degree with a specialization in Monetary and Financial Economics. My research interests lie at the intersection of macroeconomic policy, financial stability, and economic growth, particularly in emerging markets.
-            </p>
-            <p>
-                My professional experience includes serving as a research assistant for leading economists such as Dr. Juan Carlos Moreno Brid and Dr. Noemi Levy Orlik, focusing on topics like balance-of-payments constrained growth, financial structures, and monetary policy in developing economies. I have also collaborated as an external consultant for institutions such as UNCTAD, INEGI, and the Espinosa Yglesias Study Center, contributing to policy analysis and macroeconomic evaluations.
-            </p>
-            <p>
-                I have authored and co-authored multiple academic publications in journals such as Economía Informa, PSL Quarterly Review, INET, and EconomíaUNAM, covering themes like economic growth dynamics, external financial constraints, and macroeconomic stability. My work has also been featured in public discussions through opinion pieces in Revista Este País, México Social, Reforma, and Nexos.
-            </p>
+            <p>Economist specializing in macroeconomics, financial stability, and economic growth. Currently, a master's student in economics and adjunct professor at UNAM.</p>
         </section>
         
-        <div class="contact">
+        <section id="research">
+            <h2>Research</h2>
+            <p>My research interests include monetary policy, financial crises, and balance of payments constrained growth models.</p>
+        </section>
+        
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>Here, published articles, working papers, and academic collaborations will be listed.</p>
+        </section>
+        
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <p>Adjunct professor at the Faculty of Economics, UNAM. Courses taught on macroeconomics and financial stability.</p>
+        </section>
+        
+        <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:edgar.francisco.perez.medina@gmail.com">edgar.francisco.perez.medina@gmail.com</a></p>
             <p>LinkedIn: <a href="https://mx.linkedin.com/in/edgar-francisco-p%C3%A9rez-medina" target="_blank">Profile</a></p>
             <p>X (Twitter): <a href="https://x.com/edgarmdina" target="_blank">Profile</a></p>
-        </div>
+        </section>
     </div>
     
     <footer>
