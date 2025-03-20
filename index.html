@@ -5,25 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edgar Pérez Medina - Economista</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Lato', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #2c3e50;
-            color: white;
+            background-color: #fff;
+            color: #000;
             text-align: center;
-            padding: 1rem 0;
+            position: relative;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
         nav {
-            text-align: center;
-            background: #34495e;
-            padding: 0.5rem;
+            margin: 1rem 0;
+            position: relative;
+            z-index: 2;
         }
         nav a {
-            color: white;
+            color: black;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
@@ -34,21 +58,26 @@
             background: white;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
         }
         footer {
             text-align: center;
             padding: 1rem;
-            background: #2c3e50;
-            color: white;
             margin-top: 20px;
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Edgar Pérez Medina</h1>
-        <p>Economista | Investigación | Docencia</p>
-    </header>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="humedales.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="overlay">Edgar Pérez Medina</div>
+    </div>
     
     <nav>
         <a href="#sobre-mi">Sobre mí</a>
@@ -81,10 +110,9 @@
         
         <section id="contacto">
             <h2>Contacto</h2>
-            <p>Correo: edgar.perez@ejemplo.com</p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/edgarperez" target="_blank">Perfil</a></p>
-            <p>Google Scholar: <a href="#" target="_blank">Perfil</a></p>
-            <p>SSRN: <a href="#" target="_blank">Perfil</a></p>
+            <p>Correo: <a href="mailto:edgar.francisco.perez.medina@gmail.com">edgar.francisco.perez.medina@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://mx.linkedin.com/in/edgar-francisco-p%C3%A9rez-medina" target="_blank">Perfil</a></p>
+            <p>X (Twitter): <a href="https://twitter.com/edgarperez" target="_blank">Perfil</a></p>
         </section>
     </div>
     
@@ -93,4 +121,3 @@
     </footer>
 </body>
 </html>
-
