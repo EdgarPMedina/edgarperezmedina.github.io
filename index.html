@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Pérez Medina - Economista</title>
+    <title>Edgar Pérez Medina - Economist</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
         
@@ -21,6 +21,9 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         video {
             width: 100%;
@@ -33,13 +36,35 @@
         }
         .overlay {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
             color: white;
-            font-size: 4rem;
+        }
+        .overlay img {
+            width: 45%;
+            height: auto;
+            max-height: 80vh;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .overlay-text {
+            width: 50%;
+            font-size: 3rem;
             font-weight: bold;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .overlay-text p {
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-top: 10px;
         }
         nav {
             margin: 1rem 0;
@@ -74,50 +99,56 @@
     <div class="video-container">
         <video autoplay loop muted>
             <source src="humedales.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
+            Your browser does not support the video tag.
         </video>
-        <div class="overlay">Edgar Pérez Medina</div>
+        <div class="overlay">
+            <img src="edgar.jpg" alt="Edgar Pérez Medina">
+            <div class="overlay-text">
+                <div>Edgar Pérez Medina</div>
+                <p>Economist | Faculty of Economics, UNAM</p>
+            </div>
+        </div>
     </div>
     
     <nav>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#investigaciones">Investigaciones</a>
-        <a href="#publicaciones">Publicaciones</a>
-        <a href="#docencia">Docencia</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
     </nav>
     
     <div class="container">
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Economista especializado en macroeconomía, estabilidad financiera y crecimiento económico. Actualmente, estudiante de maestría en economía y profesor adjunto en la UNAM.</p>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Economist specializing in macroeconomics, financial stability, and economic growth. Currently, a master's student in economics and adjunct professor at UNAM.</p>
         </section>
         
-        <section id="investigaciones">
-            <h2>Investigaciones</h2>
-            <p>Mis áreas de interés incluyen política monetaria, crisis financieras y modelos de crecimiento restringido por la balanza de pagos.</p>
+        <section id="research">
+            <h2>Research</h2>
+            <p>My research interests include monetary policy, financial crises, and balance of payments constrained growth models.</p>
         </section>
         
-        <section id="publicaciones">
-            <h2>Publicaciones</h2>
-            <p>Aquí se listarán artículos publicados, working papers y colaboraciones académicas.</p>
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>Here, published articles, working papers, and academic collaborations will be listed.</p>
         </section>
         
-        <section id="docencia">
-            <h2>Docencia</h2>
-            <p>Profesor adjunto en la Facultad de Economía de la UNAM. Clases impartidas sobre macroeconomía y estabilidad financiera.</p>
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <p>Adjunct professor at the Faculty of Economics, UNAM. Courses taught on macroeconomics and financial stability.</p>
         </section>
         
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Correo: <a href="mailto:edgar.francisco.perez.medina@gmail.com">edgar.francisco.perez.medina@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://mx.linkedin.com/in/edgar-francisco-p%C3%A9rez-medina" target="_blank">Perfil</a></p>
-            <p>X (Twitter): <a href="https://twitter.com/edgarperez" target="_blank">Perfil</a></p>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:edgar.francisco.perez.medina@gmail.com">edgar.francisco.perez.medina@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://mx.linkedin.com/in/edgar-francisco-p%C3%A9rez-medina" target="_blank">Profile</a></p>
+            <p>X (Twitter): <a href="https://twitter.com/edgarperez" target="_blank">Profile</a></p>
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2025 Edgar Pérez Medina | Todos los derechos reservados</p>
+        <p>&copy; 2025 Edgar Pérez Medina | All rights reserved</p>
     </footer>
 </body>
 </html>
