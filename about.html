@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Edgar Pérez-Medina</title>
   <!-- Favicon personalizado con emoji 🌑 -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌑</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌑</text></svg>">
   <!-- Importar Google Fonts: Montserrat (300 & 700) y Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Importar Font Awesome -->
@@ -35,7 +35,7 @@
     }
     .navbar a {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 300; /* Light */
+      font-weight: 300;
       color: white;
       text-decoration: none;
       text-transform: uppercase;
@@ -81,7 +81,7 @@
       color: white;
       margin: 0;
     }
-    /* Menú Interno (después del video) */
+    /* Menú Interno para Navegación de Secciones */
     .internal-menu {
       background: #f8f8f8;
       padding: 1rem 0;
@@ -140,6 +140,52 @@
       font-weight: 300;
       color: black;
     }
+    .resume .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .resume .col-left,
+    .resume .col-right {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    .resume .col-left h3,
+    .resume .col-right h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: black;
+      border-bottom: 2px solid black;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .resume .resume-item {
+      margin-bottom: 1.5rem;
+    }
+    .resume .resume-item .item-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: black;
+      margin: 0 0 0.5rem 0;
+    }
+    .resume .resume-item .item-details {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: grey;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .resume .resume-item .item-details .years {
+      margin-left: 1rem;
+    }
+    .resume .resume-item .item-description {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      font-size: 0.9rem;
+    }
     /* Sección: CV */
     .cv {
       padding: 2rem;
@@ -182,15 +228,15 @@
     .cv .cv-buttons a:hover {
       font-weight: 700;
     }
-    /* Footer inferior */
+    /* Footer inferior - Reducido a un cuarto del tamaño actual */
     footer {
       background: rgba(255,255,255,0.95);
-      padding: 0.75rem;
+      padding: 0.1875rem; /* Aproximadamente 1/4 de 0.75rem */
       position: fixed;
       bottom: 0;
       width: 100%;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.225rem; /* Aproximadamente 1/4 de 0.9rem */
       box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
       z-index: 1001;
     }
@@ -202,6 +248,9 @@
       .about-info {
         flex-direction: column;
         text-align: center;
+      }
+      .resume .row {
+        flex-direction: column;
       }
     }
   </style>
@@ -243,8 +292,8 @@
     <div class="description">
       <h2>Who I Am</h2>
       <p>
-        Aquí puedes agregar una descripción sobre quién eres, tu trayectoria, pasiones, logros y lo que te define. 
-        Este es un ejemplo de texto, reemplázalo con tu propia información.
+        Aquí puedes agregar una descripción sobre quién eres, tu trayectoria, pasiones, logros y lo que te define.
+        Este es un ejemplo de texto; reemplázalo con tu propia información.
       </p>
     </div>
   </section>
@@ -258,30 +307,54 @@
     </div>
     <div class="container">
       <div class="row">
-        <!-- Columna Izquierda -->
+        <!-- Columna Izquierda: Education and Awards, Distinctions and Scholarships -->
         <div class="col-left">
-          <h3 class="resume-title">Education</h3>
+          <h3 class="resume-title">Education and Awards, Distinctions and Scholarships</h3>
           <div class="resume-item">
-            <h4>El Colegio de México</h4>
-            <h5>2024 – 2026</h5>
-            <p><em>MPhil in Economics</em></p>
-            <p>Selected among 200 applicants, securing one of 15 spots.</p>
+            <h4 class="item-title">EDUCATION</h4>
+            <div class="item-details">
+              <span class="institution">EL COLEGIO DE MÉXICO</span>
+              <span class="years">2024 – 2026</span>
+            </div>
+            <ul class="item-description">
+              <li>Selected among 200 applicants, securing one of 15 spots.</li>
+            </ul>
           </div>
-          <!-- Agrega más items según necesites -->
-        </div>
-        <!-- Columna Derecha -->
-        <div class="col-right">
-          <h3 class="resume-title">Research Experience</h3>
           <div class="resume-item">
-            <h4>Banco de México – Financial Stability Division</h4>
-            <h5>2023 – 2024</h5>
-            <p><em>Financial Researcher</em></p>
-            <ul>
+            <h4 class="item-title">AWARDS & SCHOLARSHIPS</h4>
+            <div class="item-details">
+              <span class="institution">UNIVERSITY AWARD</span>
+              <span class="years">2023</span>
+            </div>
+            <ul class="item-description">
+              <li>Honored for academic excellence.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Columna Derecha: Research Experience and Other Relevant Experience -->
+        <div class="col-right">
+          <h3 class="resume-title">Research Experience and Other Relevant Experience</h3>
+          <div class="resume-item">
+            <h4 class="item-title">RESEARCH EXPERIENCE</h4>
+            <div class="item-details">
+              <span class="institution">BANCO DE MÉXICO</span>
+              <span class="years">2023 – 2024</span>
+            </div>
+            <ul class="item-description">
               <li>Monitored domestic and international financial stability regulations.</li>
               <li>Developed time series and regression models.</li>
             </ul>
           </div>
-          <!-- Agrega más items según necesites -->
+          <div class="resume-item">
+            <h4 class="item-title">OTHER RELEVANT EXPERIENCE</h4>
+            <div class="item-details">
+              <span class="institution">PUED-UNAM</span>
+              <span class="years">2020 – 2021</span>
+            </div>
+            <ul class="item-description">
+              <li>Assisted in development studies and research projects.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -294,8 +367,10 @@
       <p>Download my Curriculum Vitae.</p>
     </div>
     <div class="cv-buttons">
-      <a href="cv_black.pdf" class="black-btn" target="_blank">Download CV (Black)</a>
-      <a href="cv_white.pdf" class="white-btn" target="_blank">Download CV (White)</a>
+      <!-- Botón negro: CV en inglés -->
+      <a href="cv_en.pdf" class="black-btn" target="_blank">Download CV (EN)</a>
+      <!-- Botón blanco: CV en español -->
+      <a href="cv_es.pdf" class="white-btn" target="_blank">Download CV (ES)</a>
     </div>
   </section>
   
@@ -305,5 +380,4 @@
   </footer>
 </body>
 </html>
-
 
