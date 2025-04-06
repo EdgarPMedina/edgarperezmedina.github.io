@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edgar Pérez Medina - Economist</title>
+  <title>About Me - Edgar Pérez-Medina</title>
   <!-- Favicon personalizado con emoji 🌑 -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌑</text></svg>">
-  <!-- Importar Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Importar Font Awesome para íconos -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌑</text></svg>">
+  <!-- Importar Google Fonts: Montserrat (300 & 700) y Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Importar Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Estilos generales */
     body {
       font-family: 'Lato', sans-serif;
       margin: 0;
@@ -37,140 +38,29 @@
       text-decoration: none;
       text-transform: uppercase;
       margin: 0 15px;
-      font-weight: bold;
+      font-weight: 300;
       font-size: 1rem;
     }
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 60px; /* Compensa la navbar fija */
+    /* Sección de descripción */
+    #about .description {
+      padding: 4rem 1rem;
+      background: #f8f8f8;
     }
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    .overlay {
-      position: absolute;
-      width: 80%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
-      color: white;
-      flex-wrap: wrap;
-    }
-    .overlay img {
-      width: 45%;
-      height: auto;
-      max-height: 80vh;
-      border-radius: 10px;
-      object-fit: cover;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
-    }
-    .overlay-text {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
-    }
-    /* Nombre en negro, negrita y tamaño 6rem */
-    .overlay-text .name {
-      font-size: 6rem;
-      font-weight: bold;
+    #about h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       color: black;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
-    .dynamic-title {
-      font-size: 2.5rem;
+    #about p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
-    /* Mantener en línea el texto fijo y animado */
-    .static-text, .typed-text, .typed-cursor {
-      font-size: 2.5rem;
-      display: inline;
-    }
-    .affiliation {
-      font-size: 2rem;
-      margin-top: 0.5rem;
-    }
-    .email {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
-    /* Botones sociales: fondo negro e íconos en blanco */
-    .social-buttons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    .social-buttons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: black !important;
-      color: #fff;
-      text-decoration: none;
-      font-size: 24px;
-      transition: transform 0.2s;
-    }
-    .social-buttons a:hover {
-      transform: scale(1.1);
-    }
-    /* Animación de aparición (fade-in) para elementos al cargar */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    /* Efecto de scroll reveal: elementos inicialmente ocultos y desplazados */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-    /* Estilo para el cursor parpadeante de Typed.js */
-    .typed-cursor {
-      font-size: 2.5rem;
-      opacity: 1;
-      animation: blink 0.7s infinite;
-    }
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-    /* Footer fijo en la parte inferior, con tamaño de fuente reducido */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: rgba(255,255,255,0.95);
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 1001;
-      font-size: 0.33rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    }
-    /* Container para contenido adicional (si aplica) */
+    /* Contenedor de la experiencia */
     .container {
       width: 80%;
       margin: 20px auto;
@@ -180,46 +70,92 @@
       position: relative;
       z-index: 2;
     }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .col-left, .col-right {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    .resume-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: black;
+      border-bottom: 2px solid black;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .resume-item {
+      margin-bottom: 1.5rem;
+    }
+    .resume-item .item-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: black;
+      margin: 0 0 0.5rem 0;
+    }
+    .resume-item .item-details {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: grey;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .resume-item .item-details .years {
+      margin-left: 1rem;
+    }
+    .resume-item .item-description {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      font-size: 0.9rem;
+    }
+    /* Footer inferior */
+    footer {
+      background: rgba(255,255,255,0.95);
+      padding: 0.75rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 0.225rem; /* Reducido a 1/4 del tamaño original */
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 1001;
+    }
+    /* Scroll Reveal: elementos inicialmente ocultos y desplazados */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
     /* Media Queries para dispositivos móviles */
     @media (max-width: 768px) {
-      .overlay {
-        width: 95%;
-        flex-direction: column;
-      }
-      .overlay img {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      .overlay-text {
-        width: 100%;
-      }
       .navbar a {
         margin: 5px;
         font-size: 0.9rem;
       }
-      .static-text, .typed-text, .typed-cursor {
-        font-size: 1.8rem;
+      .container {
+        width: 95%;
       }
-      .overlay-text .name {
-        font-size: 3rem;
+      .row {
+        flex-direction: column;
       }
-      .dynamic-title {
-        font-size: 1.8rem;
-      }
-      .affiliation {
-        font-size: 1.5rem;
-      }
-      .email {
-        font-size: 1.2rem;
-      }
-      footer {
+      #about p {
         font-size: 0.9rem;
-        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Barra de navegación -->
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -229,83 +165,96 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="video-container">
-    <video autoplay loop muted>
-      <source src="Humedales.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="overlay">
-      <img src="Edgar.jpg" alt="Edgar Pérez Medina">
-      <div class="overlay-text">
-        <div class="name">Edgar Pérez Medina</div>
-        <div class="dynamic-title">
-          <!-- Usamos spans para mantener el texto en una misma línea -->
-          <span class="static-text">I am a </span><span class="typed-text"></span>
+  <!-- Sección "Who I Am" con clase reveal -->
+  <section id="about" class="reveal">
+    <div class="description">
+      <h2>Who I Am</h2>
+      <p>
+        Aquí puedes agregar una descripción sobre quién eres, tu trayectoria, pasiones, logros y lo que te define.
+        Este es un ejemplo de texto; reemplázalo con tu propia información.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenedor de la experiencia (Education, Research, etc.) con scroll reveal -->
+  <div class="container reveal">
+    <div class="row">
+      <!-- Columna Izquierda: Education -->
+      <div class="col-left">
+        <h3 class="resume-title">Education and Awards, Distinctions and Scholarships</h3>
+        <div class="resume-item reveal">
+          <h4 class="item-title">El Colegio de México</h4>
+          <div class="item-details">
+            <span class="institution">EL COLEGIO DE MÉXICO</span>
+            <span class="years">2024 – 2026</span>
+          </div>
+          <ul class="item-description">
+            <li>Selected among 200 applicants, securing one of 15 spots.</li>
+          </ul>
         </div>
-        <div class="affiliation">Faculty of Economics, UNAM</div>
-        <div class="social-buttons">
-          <a href="https://x.com/edgarmdina?s=21" target="_blank" title="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/edgar-francisco-pérez-medina" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://scholar.google.com/citations?user=OJpt0QEAAAAJ&hl" target="_blank" title="Google Scholar">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </a>
+        <div class="resume-item reveal">
+          <h4 class="item-title">Awards & Scholarships</h4>
+          <div class="item-details">
+            <span class="institution">University Award</span>
+            <span class="years">2023</span>
+          </div>
+          <ul class="item-description">
+            <li>Honored for academic excellence.</li>
+          </ul>
         </div>
-        <div class="email">
-          <p>edgarmedina@comunidad.unam.mx</p>
+      </div>
+      <!-- Columna Derecha: Research Experience -->
+      <div class="col-right">
+        <h3 class="resume-title">Research Experience and Other Relevant Experience</h3>
+        <div class="resume-item reveal">
+          <h4 class="item-title">Banco de México – Financial Stability Division</h4>
+          <div class="item-details">
+            <span class="institution">BANCO DE MÉXICO</span>
+            <span class="years">2023 – 2024</span>
+          </div>
+          <ul class="item-description">
+            <li>Monitored domestic and international financial stability regulations.</li>
+            <li>Developed time series and regression models.</li>
+          </ul>
+        </div>
+        <div class="resume-item reveal">
+          <h4 class="item-title">Other Relevant Experience</h4>
+          <div class="item-details">
+            <span class="institution">PUED-UNAM</span>
+            <span class="years">2020 – 2021</span>
+          </div>
+          <ul class="item-description">
+            <li>Assisted in development studies and research projects.</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Agregamos la clase "reveal" a la sección de contenido para que aparezca al hacer scroll -->
-  <div class="container reveal">
-    <!-- Aquí se coloca el contenido adicional de la página -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am a Mexican economist and currently a Master's student in Economics at the National Autonomous University of Mexico (UNAM), where I also earned my Bachelor's degree with a specialization in Monetary and Financial Economics. My research interests lie at the intersection of macroeconomic policy, financial stability, and economic growth, particularly in emerging markets.
-      </p>
-      <p>
-        My professional experience includes serving as a research assistant for leading economists and collaborating as an external consultant for institutions such as UNCTAD, INEGI, and the Espinosa Yglesias Study Center.
-      </p>
-    </section>
-  </div>
-  
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Edgar Pérez Medina | All rights reserved</p>
+    <p>&copy; 2025 Edgar Pérez-Medina | All rights reserved</p>
   </footer>
-  
-  <!-- Incluir Typed.js para el efecto de texto dinámico -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- Script para el efecto de "scroll reveal" -->
+
+  <!-- Script para Scroll Reveal -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const revealElements = document.querySelectorAll('.reveal');
-      const revealOnScroll = new IntersectionObserver((entries, observer) => {
+      const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.2 });
       
       revealElements.forEach(el => {
-        revealOnScroll.observe(el);
+        observer.observe(el);
       });
-    });
-    
-    var typed = new Typed('.typed-text', {
-      strings: ["Economist", "Master Student", "Research Assistant", "Teaching Assistant"],
-      typeSpeed: 100,
-      backSpeed: 50,
-      loop: true
     });
   </script>
 </body>
 </html>
+
 
