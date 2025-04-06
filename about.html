@@ -5,22 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Edgar Pérez-Medina</title>
   <!-- Favicon personalizado con emoji 🌑 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌑</text></svg>">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌑</text></svg>">
   <!-- Importar Google Fonts: Montserrat (300 & 700) y Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Importar Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Estilos generales */
+    /* Estilos Globales */
     body {
-      font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fff;
+      font-family: 'Lato', sans-serif;
+      background: #fff;
       color: #000;
       text-align: center;
       position: relative;
     }
+    /* Barra Superior */
     .navbar {
       background: black;
       padding: 1rem;
@@ -34,54 +36,127 @@
     }
     .navbar a {
       font-family: 'Montserrat', sans-serif;
+      font-weight: 300; /* Light */
+      font-weight: 300;
       color: white;
       text-decoration: none;
       text-transform: uppercase;
       margin: 0 15px;
-      font-weight: 300;
       font-size: 1rem;
+      transition: font-weight 0.3s ease-in-out;
     }
-    /* Sección de descripción */
-    #about .description {
-      padding: 4rem 1rem;
+    .navbar a:hover {
+      font-weight: 700;
+    }
+    /* Contenedor del Video (50% de la altura de la ventana) */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      padding-top: 60px; /* Compensa la navbar fija */
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    /* Overlay sobre el video para mostrar el título */
+    .video-container .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-container .overlay h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 6rem;
+      color: white;
+      margin: 0;
+    }
+    /* Menú Interno (después del video) */
+    /* Menú Interno para Navegación de Secciones */
+    .internal-menu {
       background: #f8f8f8;
+      padding: 1rem 0;
+      text-align: center;
+      border-bottom: 2px solid #000;
     }
-    #about h2 {
+    .internal-menu a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: #000;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: font-weight 0.3s;
+    }
+    .internal-menu a:hover {
+      font-weight: 700;
+    }
+    /* Sección: Who I Am */
+    .about-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .about-info .photo {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin: 1rem;
+    }
+    .about-info .photo img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .about-info .description {
+      flex: 2 1 400px;
+      margin: 1rem;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    /* Sección: Resume */
+    .resume {
+      padding: 2rem;
+    }
+    .resume .section-title {
+      margin-bottom: 2rem;
+    }
+    .resume .section-title h2 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       color: black;
-      margin-bottom: 1rem;
     }
-    #about p {
-      font-family: 'Lato', sans-serif;
+    .resume .section-title p {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 300;
-      color: #333;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
+      color: black;
     }
-    /* Contenedor de la experiencia */
-    .container {
-      width: 80%;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 2;
-    }
-    .row {
+    .resume .row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
     }
-    .col-left, .col-right {
+    .resume .col-left,
+    .resume .col-right {
       flex: 1;
       min-width: 300px;
       text-align: left;
     }
-    .resume-title {
+    .resume .col-left h3,
+    .resume .col-right h3 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       color: black;
@@ -89,44 +164,101 @@
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
-    .resume-item {
+    .resume .resume-item {
       margin-bottom: 1.5rem;
     }
-    .resume-item .item-title {
+    .resume .resume-item .item-title {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       color: black;
       margin: 0 0 0.5rem 0;
     }
-    .resume-item .item-details {
+    .resume .resume-item .item-details {
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
       color: grey;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
     }
-    .resume-item .item-details .years {
+    .resume .resume-item .item-details .years {
       margin-left: 1rem;
     }
-    .resume-item .item-description {
+    .resume .resume-item .item-description {
       margin-top: 0.5rem;
       padding-left: 1.5rem;
       list-style-type: disc;
       font-size: 0.9rem;
     }
-    /* Footer inferior */
+    /* Sección: CV */
+    .cv {
+      padding: 2rem;
+    }
+    .cv .section-title {
+      margin-bottom: 2rem;
+    }
+    .cv .section-title h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: black;
+    }
+    .cv .section-title p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: black;
+    }
+    .cv .cv-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 1rem;
+    }
+    .cv .cv-buttons a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      transition: font-weight 0.3s, background-color 0.3s, color 0.3s;
+    }
+    .cv .cv-buttons a.black-btn {
+      background: black;
+      color: white;
+    }
+    .cv .cv-buttons a.white-btn {
+      background: white;
+      color: black;
+      border: 2px solid black;
+    }
+    .cv .cv-buttons a:hover {
+      font-weight: 700;
+    }
+    /* Footer inferior - Reducido a un cuarto del tamaño actual */
     footer {
       background: rgba(255,255,255,0.95);
       padding: 0.75rem;
+      padding: 0.1875rem; /* Aproximadamente 1/4 de 0.75rem */
       position: fixed;
       bottom: 0;
       width: 100%;
       text-align: center;
-      font-size: 0.225rem; /* Reducido a 1/4 del tamaño original */
+      font-size: 0.9rem;
+      font-size: 0.225rem; /* Aproximadamente 1/4 de 0.9rem */
       box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
       z-index: 1001;
     }
-    /* Scroll Reveal: elementos inicialmente ocultos y desplazados */
+    /* Responsive */
+    @media (max-width: 768px) {
+      .video-container .overlay h1 {
+        font-size: 3rem;
+      }
+      .about-info {
+        flex-direction: column;
+        text-align: center;
+      }
+      .resume .row {
+        flex-direction: column;
+      }
+    }
+    /* Scroll Reveal: elementos inicialmente ocultos y desplazados hacia abajo */
     .reveal {
       opacity: 0;
       transform: translateY(50px);
@@ -136,100 +268,144 @@
       opacity: 1;
       transform: none;
     }
-    /* Media Queries para dispositivos móviles */
-    @media (max-width: 768px) {
-      .navbar a {
-        margin: 5px;
-        font-size: 0.9rem;
-      }
-      .container {
-        width: 95%;
-      }
-      .row {
-        flex-direction: column;
-      }
-      #about p {
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Barra de navegación -->
+  <!-- Barra Superior -->
   <nav class="navbar">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Me</a>
     <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
     <a href="teaching.html">Teaching</a>
-    <a href="contact.html">Contact</a>
+    <a href="media.html">Media</a>
+    <a href="resources.html">Resources</a>
   </nav>
 
-  <!-- Sección "Who I Am" con clase reveal -->
-  <section id="about" class="reveal">
+  <!-- Contenedor del Video -->
+  <div class="video-container">
+    <video autoplay loop muted>
+      <source src="Humedales.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay">
+      <h1>About Me</h1>
+    </div>
+  </div>
+
+  <!-- Menú Interno para Navegación de Secciones -->
+  <nav class="internal-menu">
+    <a href="#whoiam">Who I Am</a>
+    <a href="#resume">Resume</a>
+    <a href="#cv">CV</a>
+  </nav>
+
+  <!-- Sección: Who I Am -->
+  <section id="whoiam" class="about-info">
+    <div class="photo">
+      <img src="your-photo.jpg" alt="Your Photo">
+    </div>
     <div class="description">
       <h2>Who I Am</h2>
       <p>
+        Aquí puedes agregar una descripción sobre quién eres, tu trayectoria, pasiones, logros y lo que te define. 
+        Este es un ejemplo de texto, reemplázalo con tu propia información.
         Aquí puedes agregar una descripción sobre quién eres, tu trayectoria, pasiones, logros y lo que te define.
         Este es un ejemplo de texto; reemplázalo con tu propia información.
       </p>
     </div>
   </section>
 
-  <!-- Contenedor de la experiencia (Education, Research, etc.) con scroll reveal -->
-  <div class="container reveal">
-    <div class="row">
-      <!-- Columna Izquierda: Education -->
-      <div class="col-left">
-        <h3 class="resume-title">Education and Awards, Distinctions and Scholarships</h3>
-        <div class="resume-item reveal">
-          <h4 class="item-title">El Colegio de México</h4>
-          <div class="item-details">
-            <span class="institution">EL COLEGIO DE MÉXICO</span>
-            <span class="years">2024 – 2026</span>
+  <!-- Sección: Resume -->
+  <section id="resume" class="resume section">
+    <!-- Título de la sección -->
+    <div class="container section-title">
+      <h2>Resume</h2>
+      <p>Academic background and research experience in macroeconomics, financial stability, and economic policy.</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!-- Columna Izquierda -->
+        <!-- Columna Izquierda: Education and Awards, Distinctions and Scholarships -->
+        <div class="col-left">
+          <h3 class="resume-title">Education</h3>
+          <h3 class="resume-title">Education and Awards, Distinctions and Scholarships</h3>
+          <div class="resume-item">
+            <h4>El Colegio de México</h4>
+            <h5>2024 – 2026</h5>
+            <p><em>MPhil in Economics</em></p>
+            <p>Selected among 200 applicants, securing one of 15 spots.</p>
+            <h4 class="item-title">EDUCATION</h4>
+            <div class="item-details">
+              <span class="institution">EL COLEGIO DE MÉXICO</span>
+              <span class="years">2024 – 2026</span>
+            </div>
+            <ul class="item-description">
+              <li>Selected among 200 applicants, securing one of 15 spots.</li>
+            </ul>
           </div>
-          <ul class="item-description">
-            <li>Selected among 200 applicants, securing one of 15 spots.</li>
-          </ul>
+          <div class="resume-item">
+            <h4 class="item-title">AWARDS & SCHOLARSHIPS</h4>
+            <div class="item-details">
+              <span class="institution">UNIVERSITY AWARD</span>
+              <span class="years">2023</span>
+            </div>
+            <ul class="item-description">
+              <li>Honored for academic excellence.</li>
+            </ul>
+          </div>
+          <!-- Agrega más items según necesites -->
         </div>
-        <div class="resume-item reveal">
-          <h4 class="item-title">Awards & Scholarships</h4>
-          <div class="item-details">
-            <span class="institution">University Award</span>
-            <span class="years">2023</span>
+        <!-- Columna Derecha -->
+        <!-- Columna Derecha: Research Experience and Other Relevant Experience -->
+        <div class="col-right">
+          <h3 class="resume-title">Research Experience</h3>
+          <h3 class="resume-title">Research Experience and Other Relevant Experience</h3>
+          <div class="resume-item">
+            <h4>Banco de México – Financial Stability Division</h4>
+            <h5>2023 – 2024</h5>
+            <p><em>Financial Researcher</em></p>
+            <ul>
+            <h4 class="item-title">RESEARCH EXPERIENCE</h4>
+            <div class="item-details">
+              <span class="institution">BANCO DE MÉXICO</span>
+              <span class="years">2023 – 2024</span>
+            </div>
+            <ul class="item-description">
+              <li>Monitored domestic and international financial stability regulations.</li>
+              <li>Developed time series and regression models.</li>
+            </ul>
           </div>
-          <ul class="item-description">
-            <li>Honored for academic excellence.</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Columna Derecha: Research Experience -->
-      <div class="col-right">
-        <h3 class="resume-title">Research Experience and Other Relevant Experience</h3>
-        <div class="resume-item reveal">
-          <h4 class="item-title">Banco de México – Financial Stability Division</h4>
-          <div class="item-details">
-            <span class="institution">BANCO DE MÉXICO</span>
-            <span class="years">2023 – 2024</span>
+          <!-- Agrega más items según necesites -->
+          <div class="resume-item">
+            <h4 class="item-title">OTHER RELEVANT EXPERIENCE</h4>
+            <div class="item-details">
+              <span class="institution">PUED-UNAM</span>
+              <span class="years">2020 – 2021</span>
+            </div>
+            <ul class="item-description">
+              <li>Assisted in development studies and research projects.</li>
+            </ul>
           </div>
-          <ul class="item-description">
-            <li>Monitored domestic and international financial stability regulations.</li>
-            <li>Developed time series and regression models.</li>
-          </ul>
-        </div>
-        <div class="resume-item reveal">
-          <h4 class="item-title">Other Relevant Experience</h4>
-          <div class="item-details">
-            <span class="institution">PUED-UNAM</span>
-            <span class="years">2020 – 2021</span>
-          </div>
-          <ul class="item-description">
-            <li>Assisted in development studies and research projects.</li>
-          </ul>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Sección: CV -->
+  <section id="cv" class="cv section">
+    <div class="container section-title">
+      <h2>CV</h2>
+      <p>Download my Curriculum Vitae.</p>
+    </div>
+    <div class="cv-buttons">
+      <a href="cv_black.pdf" class="black-btn" target="_blank">Download CV (Black)</a>
+      <a href="cv_white.pdf" class="white-btn" target="_blank">Download CV (White)</a>
+      <!-- Botón negro: CV en inglés -->
+      <a href="cv_en.pdf" class="black-btn" target="_blank">Download CV (EN)</a>
+      <!-- Botón blanco: CV en español -->
+      <a href="cv_es.pdf" class="white-btn" target="_blank">Download CV (ES)</a>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -239,19 +415,20 @@
   <!-- Script para Scroll Reveal -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const revealElements = document.querySelectorAll('.reveal');
+      // Selecciona todos los elementos <section> para aplicar la animación de scroll
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.classList.add("reveal"));
+      
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.2 });
       
-      revealElements.forEach(el => {
-        observer.observe(el);
-      });
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
     });
   </script>
 </body>
