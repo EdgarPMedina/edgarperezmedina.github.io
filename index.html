@@ -81,7 +81,10 @@
       object-fit: cover;
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
+      /* Sin delay para la imagen */
+      animation-delay: 0s;
     }
+    /* Quitamos la animación del contenedor para aplicar individualmente */
     .overlay-text {
       width: 50%;
       display: flex;
@@ -90,58 +93,49 @@
       justify-content: center;
       text-align: center;
       opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
     }
-    /* Nombre en negro, negrita y tamaño 4rem */
+    /* Animación para el nombre */
     .overlay-text .name {
       font-size: 4rem;
       font-weight: bold;
       color: black;
       margin-bottom: 0.5rem;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 0.5s;
     }
-    .dynamic-title {
+    /* Animación para el título dinámico ("I am a ...") */
+    .overlay-text .dynamic-title {
       font-size: 2.5rem;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+    /* Animación para la afiliación */
+    .overlay-text .affiliation {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 1.5s;
+    }
+    /* Animación para los botones sociales */
+    .overlay-text .social-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+    /* Animación para el email */
+    .overlay-text .email {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 2.5s;
     }
     /* Los spans para mantener en línea el texto fijo y animado */
     .static-text, .typed-text, .typed-cursor {
       font-size: 2.5rem;
       display: inline;
-    }
-    .affiliation {
-      font-size: 2rem;
-      margin-top: 0.5rem;
-    }
-    .email {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
-    /* Estilos para botones sociales: fondo negro y íconos en blanco */
-    .social-buttons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-    .social-buttons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: black !important;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      transition: transform 0.1s;
-    }
-    .social-buttons a:hover {
-      transform: scale(1.1);
-    }
-    /* Animación de aparición (fade-in) */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
     /* Estilo para el cursor parpadeante de Typed.js */
     .typed-cursor {
@@ -151,6 +145,11 @@
     }
     @keyframes blink {
       50% { opacity: 0; }
+    }
+    /* Animación de aparición (fade-in) */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     /* Footer fijo en la parte inferior, reducido a la mitad */
     footer {
