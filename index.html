@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edgar Pérez Medina - Economist</title>
+  <!-- Favicon personalizado con emoji 🌑 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌑</text></svg>">
   <!-- Importar Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <!-- Importar Font Awesome para íconos -->
@@ -45,7 +47,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 60px; /* Ajuste por navbar fija */
+      padding-top: 60px; /* Compensa la navbar fija */
     }
     video {
       width: 100%;
@@ -89,14 +91,20 @@
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
-    .overlay-text .dynamic-title {
+    .dynamic-title p {
       font-size: 2.5rem;
+      margin: 0;
+      display: inline;
     }
-    .overlay-text .affiliation {
+    .static-text {
+      font-size: 2.5rem;
+      display: inline;
+    }
+    .affiliation {
       font-size: 2rem;
       margin-top: 0.5rem;
     }
-    .overlay-text .email {
+    .email {
       font-size: 1.5rem;
       margin-top: 1rem;
     }
@@ -128,19 +136,24 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    /* Footer fijo en la parte inferior */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255,255,255,0.9);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1001;
+      font-size: 0.9rem;
+    }
+    /* Container para contenido adicional (si aplica) */
     .container {
       width: 80%;
       margin: 20px auto;
       background: white;
       padding: 20px;
       box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 2;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 20px;
       position: relative;
       z-index: 2;
     }
@@ -166,7 +179,9 @@
       <div class="overlay-text">
         <div class="name">Edgar Pérez Medina</div>
         <div class="dynamic-title">
-          <p class="typed-text">I am Economist</p>
+          <!-- Texto fijo y animado en la misma línea -->
+          <p class="static-text">I am a </p><p class="typed-text"></p>
+        </div>
         <div class="affiliation">Faculty of Economics, UNAM</div>
         <div class="social-buttons">
           <a href="https://x.com/edgarmdina?s=21" target="_blank" title="Twitter">
@@ -186,8 +201,6 @@
     </div>
   </div>
   
-
-  
   <footer>
     <p>&copy; 2025 Edgar Pérez Medina | All rights reserved</p>
   </footer>
@@ -196,7 +209,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     var typed = new Typed('.typed-text', {
-      strings: ["I am an Economist", "I am a Master Student", "I am a Research Assistant", "I am a Teaching Assistant" ],
+      strings: ["Economist", "Master Student", "Research Assistant", "Teaching Assistant"],
       typeSpeed: 100,
       backSpeed: 50,
       loop: true
@@ -204,4 +217,5 @@
   </script>
 </body>
 </html>
+
 
