@@ -87,9 +87,12 @@
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
     }
+    /* Actualización del nombre: tamaño, color y peso */
     .overlay-text .name {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: black;
     }
     .dynamic-title p {
       font-size: 2.5rem;
@@ -131,10 +134,16 @@
     .social-buttons a:hover {
       transform: scale(1.1);
     }
-    /* Animación de aparición (fade-in) */
+    /* Animación de aparición (fade-in) con efecto de escala */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { 
+        opacity: 0; 
+        transform: scale(0.8);
+      }
+      to { 
+        opacity: 1; 
+        transform: scale(1);
+      }
     }
     /* Footer fijo en la parte inferior */
     footer {
@@ -175,9 +184,10 @@
       Your browser does not support the video tag.
     </video>
     <div class="overlay">
-      <img src="Edgar.jpg" alt="Edgar Pérez Medina">
+      <img src="Edgar.jpg" alt="Edgar Pérez-Medina">
       <div class="overlay-text">
-        <div class="name">Edgar Pérez Medina</div>
+        <!-- Actualizamos el nombre -->
+        <div class="name">Edgar Pérez-Medina</div>
         <div class="dynamic-title">
           <!-- Texto fijo y animado en la misma línea -->
           <p class="static-text">I am a </p><p class="typed-text"></p>
@@ -202,7 +212,7 @@
   </div>
   
   <footer>
-    <p>&copy; 2025 Edgar Pérez Medina | All rights reserved</p>
+    <p>&copy; 2025 Edgar Pérez-Medina | All rights reserved</p>
   </footer>
   
   <!-- Incluir Typed.js para el efecto de texto dinámico -->
