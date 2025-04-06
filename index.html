@@ -88,14 +88,17 @@
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
     }
+    /* Nombre en negro, negrita y tamaño 6rem */
     .overlay-text .name {
-      font-size: 3rem;
+      font-size: 6rem;
+      font-weight: bold;
+      color: black;
       margin-bottom: 0.5rem;
     }
     .dynamic-title {
       font-size: 2.5rem;
     }
-    /* Ahora los spans aparecen en línea */
+    /* Los spans para mantener en línea el texto fijo y animado */
     .static-text, .typed-text, .typed-cursor {
       font-size: 2.5rem;
       display: inline;
@@ -145,7 +148,7 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
-    /* Footer fijo en la parte inferior, con mayor tamaño */
+    /* Footer fijo en la parte inferior, con tamaño de fuente reducido (1/3) */
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -154,7 +157,7 @@
       bottom: 0;
       width: 100%;
       z-index: 1001;
-      font-size: 1rem;
+      font-size: 0.33rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     }
     /* Container para contenido adicional (si aplica) */
@@ -188,7 +191,7 @@
         font-size: 1.8rem;
       }
       .overlay-text .name {
-        font-size: 2rem;
+        font-size: 3rem;
       }
       .dynamic-title {
         font-size: 1.8rem;
@@ -262,6 +265,9 @@
       loop: true
     });
   </script>
+</body>
+</html>
+
 </body>
 </html>
 
