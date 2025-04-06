@@ -6,16 +6,16 @@
   <title>About Me - Edgar Pérez-Medina</title>
   <!-- Favicon personalizado con emoji 🌑 -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌑</text></svg>">
-  <!-- Importar Google Fonts: Montserrat Bold y Lato -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <!-- Importar Font Awesome (opcional si requieres íconos en el futuro) -->
+  <!-- Importar Google Fonts: Montserrat (300 & 700) y Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Importar Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Lato', sans-serif;
-      background-color: #fff;
+      background: #fff;
       color: #000;
       text-align: center;
       position: relative;
@@ -34,7 +34,7 @@
     }
     .navbar a {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
+      font-weight: 300; /* Light */
       color: white;
       text-decoration: none;
       text-transform: uppercase;
@@ -45,11 +45,11 @@
     .navbar a:hover {
       font-weight: 700;
     }
-    /* Contenedor del video */
+    /* Contenedor del video acotado a la mitad de la pantalla */
     .video-container {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 50vh; /* 50% de la altura de la ventana */
       overflow: hidden;
       padding-top: 60px; /* Compensa la navbar fija */
     }
@@ -62,8 +62,8 @@
       left: 0;
       z-index: -1;
     }
-    /* Overlay para centrar el título */
-    .overlay {
+    /* Overlay para centrar el título sobre el video */
+    .video-container .overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -73,12 +73,36 @@
       align-items: center;
       justify-content: center;
     }
-    .overlay h1 {
+    .video-container .overlay h1 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 8rem; /* Ajusta el tamaño según necesites */
+      font-size: 6rem; /* Ajusta el tamaño según necesites */
       color: white;
       margin: 0;
+    }
+    /* Sección para la foto y la descripción */
+    .about-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .about-info .photo {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin: 1rem;
+    }
+    .about-info .photo img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .about-info .description {
+      flex: 2 1 400px;
+      margin: 1rem;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.6;
     }
     /* Footer inferior */
     footer {
@@ -92,6 +116,18 @@
       box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
       z-index: 1001;
     }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .video-container .overlay h1 {
+        font-size: 3rem;
+      }
+      .about-info {
+        flex-direction: column;
+      }
+      .about-info .description {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -103,7 +139,7 @@
     <a href="media.html">Media</a>
     <a href="resources.html">Resources</a>
   </nav>
-
+  
   <div class="video-container">
     <video autoplay loop muted>
       <source src="Humedales.mp4" type="video/mp4">
@@ -113,10 +149,25 @@
       <h1>About Me</h1>
     </div>
   </div>
-
+  
+  <!-- Sección para la foto y descripción de quién eres -->
+  <section class="about-info">
+    <div class="photo">
+      <img src="your-photo.jpg" alt="Tu Foto">
+    </div>
+    <div class="description">
+      <h2>Who I Am</h2>
+      <p>
+        Aquí puedes agregar una descripción sobre quién eres, tu trayectoria, pasiones, logros y lo que te define. 
+        Este es un texto de ejemplo para que lo reemplaces por tu propia información.
+      </p>
+    </div>
+  </section>
+  
   <footer>
     <p>&copy; 2025 Edgar Pérez-Medina | All rights reserved</p>
   </footer>
 </body>
 </html>
+
 
