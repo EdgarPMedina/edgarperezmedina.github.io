@@ -29,6 +29,7 @@
       display: flex;
       justify-content: center;
       z-index: 1000;
+      flex-wrap: wrap;
     }
     .navbar a {
       font-family: 'Montserrat', sans-serif;
@@ -87,19 +88,15 @@
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
     }
-    /* Actualización del nombre: tamaño, color y peso */
     .overlay-text .name {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
-      font-weight: bold;
-      color: black;
     }
-    .dynamic-title p {
+    .dynamic-title {
       font-size: 2.5rem;
-      margin: 0;
-      display: inline;
     }
-    .static-text {
+    /* Ahora los spans aparecen en línea */
+    .static-text, .typed-text, .typed-cursor {
       font-size: 2.5rem;
       display: inline;
     }
@@ -134,27 +131,31 @@
     .social-buttons a:hover {
       transform: scale(1.1);
     }
-    /* Animación de aparición (fade-in) con efecto de escala */
+    /* Animación de aparición (fade-in) */
     @keyframes fadeIn {
-      from { 
-        opacity: 0; 
-        transform: scale(0.8);
-      }
-      to { 
-        opacity: 1; 
-        transform: scale(1);
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    /* Footer fijo en la parte inferior */
+    /* Estilo para el cursor parpadeante de Typed.js */
+    .typed-cursor {
+      font-size: 2.5rem;
+      opacity: 1;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    /* Footer fijo en la parte inferior, con mayor tamaño */
     footer {
       text-align: center;
-      padding: 1rem;
-      background: rgba(255,255,255,0.9);
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.95);
       position: fixed;
       bottom: 0;
       width: 100%;
       z-index: 1001;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     }
     /* Container para contenido adicional (si aplica) */
     .container {
@@ -165,6 +166,43 @@
       box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
       position: relative;
       z-index: 2;
+    }
+    /* Media Queries para dispositivos móviles */
+    @media (max-width: 768px) {
+      .overlay {
+        width: 95%;
+        flex-direction: column;
+      }
+      .overlay img {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      .overlay-text {
+        width: 100%;
+      }
+      .navbar a {
+        margin: 5px;
+        font-size: 0.9rem;
+      }
+      .static-text, .typed-text, .typed-cursor {
+        font-size: 1.8rem;
+      }
+      .overlay-text .name {
+        font-size: 2rem;
+      }
+      .dynamic-title {
+        font-size: 1.8rem;
+      }
+      .affiliation {
+        font-size: 1.5rem;
+      }
+      .email {
+        font-size: 1.2rem;
+      }
+      footer {
+        font-size: 0.9rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -184,13 +222,12 @@
       Your browser does not support the video tag.
     </video>
     <div class="overlay">
-      <img src="Edgar.jpg" alt="Edgar Pérez-Medina">
+      <img src="Edgar.jpg" alt="Edgar Pérez Medina">
       <div class="overlay-text">
-        <!-- Actualizamos el nombre -->
-        <div class="name">Edgar Pérez-Medina</div>
+        <div class="name">Edgar Pérez Medina</div>
         <div class="dynamic-title">
-          <!-- Texto fijo y animado en la misma línea -->
-          <p class="static-text">I am a </p><p class="typed-text"></p>
+          <!-- Ahora se usan spans para que todo quede en la misma línea -->
+          <span class="static-text">I am a </span><span class="typed-text"></span>
         </div>
         <div class="affiliation">Faculty of Economics, UNAM</div>
         <div class="social-buttons">
@@ -212,7 +249,7 @@
   </div>
   
   <footer>
-    <p>&copy; 2025 Edgar Pérez-Medina | All rights reserved</p>
+    <p>&copy; 2025 Edgar Pérez Medina | All rights reserved</p>
   </footer>
   
   <!-- Incluir Typed.js para el efecto de texto dinámico -->
@@ -227,5 +264,4 @@
   </script>
 </body>
 </html>
-
 
