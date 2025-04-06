@@ -84,7 +84,7 @@
       /* Sin delay para la imagen */
       animation-delay: 0s;
     }
-    /* Quitamos la animación del contenedor para aplicar individualmente */
+    /* Se elimina opacity: 0 para el contenedor, de modo que sus hijos puedan animarse */
     .overlay-text {
       width: 50%;
       display: flex;
@@ -92,7 +92,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      opacity: 0;
     }
     /* Animación para el nombre */
     .overlay-text .name {
@@ -102,12 +101,14 @@
       margin-bottom: 0.5rem;
       animation: fadeIn 2s ease-in-out forwards;
       animation-delay: 0.5s;
+      animation-fill-mode: both;
     }
     /* Animación para el título dinámico ("I am a ...") */
     .overlay-text .dynamic-title {
       font-size: 2.5rem;
       animation: fadeIn 2s ease-in-out forwards;
       animation-delay: 1s;
+      animation-fill-mode: both;
     }
     /* Animación para la afiliación */
     .overlay-text .affiliation {
@@ -115,6 +116,7 @@
       margin-top: 0.5rem;
       animation: fadeIn 2s ease-in-out forwards;
       animation-delay: 1.5s;
+      animation-fill-mode: both;
     }
     /* Animación para los botones sociales */
     .overlay-text .social-buttons {
@@ -124,6 +126,7 @@
       gap: 16px;
       animation: fadeIn 2s ease-in-out forwards;
       animation-delay: 2s;
+      animation-fill-mode: both;
     }
     /* Animación para el email */
     .overlay-text .email {
@@ -131,6 +134,7 @@
       margin-top: 1rem;
       animation: fadeIn 2s ease-in-out forwards;
       animation-delay: 2.5s;
+      animation-fill-mode: both;
     }
     /* Los spans para mantener en línea el texto fijo y animado */
     .static-text, .typed-text, .typed-cursor {
@@ -219,7 +223,7 @@
     <a href="research.html">Research</a>
     <a href="teaching.html">Teaching</a>
     <a href="media.html">Media</a>
-    <a href="resources.html">Resources</a>
+    <a href="reseourses.html">Reseourses</a>
   </nav>
 
   <div class="video-container">
