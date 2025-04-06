@@ -6,8 +6,8 @@
   <title>Edgar Pérez-Medina - Economist</title>
   <!-- Favicon personalizado con emoji 🌑 -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌑</text></svg>">
-  <!-- Importar Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importar Google Fonts (incluyendo Montserrat 300, 400 y 700) -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Importar Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -33,12 +33,16 @@
     }
     .navbar a {
       font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
       color: white;
       text-decoration: none;
       text-transform: uppercase;
       margin: 0 15px;
-      font-weight: bold;
       font-size: 1rem;
+      transition: font-weight 0.3s ease-in-out;
+    }
+    .navbar a:hover {
+      font-weight: 700;
     }
     .video-container {
       position: relative;
@@ -88,7 +92,7 @@
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
     }
-    /* Nombre en negro, negrita y tamaño 6rem */
+    /* Nombre en negro, negrita y tamaño 4rem */
     .overlay-text .name {
       font-size: 4rem;
       font-weight: bold;
@@ -148,10 +152,10 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
-    /* Footer fijo en la parte inferior, con tamaño de fuente reducido (1/3) */
+    /* Footer fijo en la parte inferior, reducido a la mitad */
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 0.75rem;
       background: rgba(255,255,255,0.95);
       position: fixed;
       bottom: 0;
@@ -212,11 +216,11 @@
 <body>
   <nav class="navbar">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Me</a>
     <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
     <a href="teaching.html">Teaching</a>
-    <a href="contact.html">Contact</a>
+    <a href="media.html">Media</a>
+    <a href="resources.html">Resources</a>
   </nav>
 
   <div class="video-container">
@@ -225,11 +229,10 @@
       Your browser does not support the video tag.
     </video>
     <div class="overlay">
-      <img src="Edgar.jpg" alt="Edgar Pérez Medina">
+      <img src="Edgar.jpg" alt="Edgar Pérez-Medina">
       <div class="overlay-text">
         <div class="name">Edgar Pérez-Medina</div>
         <div class="dynamic-title">
-          <!-- Ahora se usan spans para que todo quede en la misma línea -->
           <span class="static-text">I am a </span><span class="typed-text"></span>
         </div>
         <div class="affiliation">Faculty of Economics, UNAM</div>
@@ -267,7 +270,3 @@
   </script>
 </body>
 </html>
-
-</body>
-</html>
-
