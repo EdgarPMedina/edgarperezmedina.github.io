@@ -399,32 +399,28 @@ I'm always open to new opportunities for collaboration and discussions on these 
      </div>
     </div>
   </div>
-
 <!-- Sección: Contact -->
 <section id="contact" class="contact section">
   <!-- Título de la sección -->
   <div class="container section-title" data-aos="fade-up">
-    <!-- Puedes usar "Contect" si así lo deseas, pero aquí lo dejamos como "Contact" -->
     <h2>Contact</h2>
-    <!-- Texto en inglés abajo, tal como pediste -->
     <p>Feel free to send me a message!</p>
   </div>
 
   <!-- Contenedor principal de la sección de Contacto -->
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
-
+      
       <!-- Bloque Izquierdo: Información de contacto y Mapa -->
       <div class="col-lg-5" style="flex: 1; min-width: 300px; text-align: left;">
         <div class="info-wrap" style="margin-bottom: 2rem;">
           
           <!-- Dirección -->
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 1rem;">
-            <!-- Ícono con Font Awesome -->
             <i class="fa-solid fa-location-dot" style="font-size: 1.2rem; margin-right: 1rem;"></i>
             <div>
               <h3>Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p>Circuito Mario de la Cueva, Zona Cultural, Ciudad Universitaria, México, D.F. C.P. 04510</p>
             </div>
           </div>
 
@@ -432,8 +428,8 @@ I'm always open to new opportunities for collaboration and discussions on these 
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300" style="margin-bottom: 1rem;">
             <i class="fa-solid fa-phone" style="font-size: 1.2rem; margin-right: 1rem;"></i>
             <div>
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
+              <h3>Call Me</h3>
+              <p>+52 5545958067</p>
             </div>
           </div>
 
@@ -441,14 +437,14 @@ I'm always open to new opportunities for collaboration and discussions on these 
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: 1rem;">
             <i class="fa-solid fa-envelope" style="font-size: 1.2rem; margin-right: 1rem;"></i>
             <div>
-              <h3>Email Us</h3>
-              <p>info@example.com</p>
+              <h3>Email </h3>
+              <p>edgarmedina@comunidad.unam.mx</p>
             </div>
           </div>
 
           <!-- Mapa (ejemplo con Google Maps) -->
           <iframe
-            src="https://www.google.com/maps/d/viewer?mid=1qNoCNAsWR_U53N8VcYlYdtgZBcU&femb=1&ll=19.310728000000022%2C-99.18596&z=15"
+            src="https://www.google.com/maps/d/embed?mid=1qNoCNAsWR_U53N8VcYlYdtgZBcU&ehbc=2E312F" 
             frameborder="0"
             style="border:0; width: 100%; height: 270px;"
             allowfullscreen=""
@@ -459,36 +455,71 @@ I'm always open to new opportunities for collaboration and discussions on these 
       </div>
       <!-- Fin Bloque Izquierdo -->
 
-      <!-- Bloque Derecho: Formulario -->
+      <!-- Bloque Derecho: Formulario de Contacto -->
       <div class="col-lg-7" style="flex: 1; min-width: 300px;">
         <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
-            
-            <!-- Nombre -->
-            <div class="col-md-6">
-              <label for="name-field" class="pb-2" style="display: block; text-align: left;">Your Name</label>
-              <input type="text" name="name" id="name-field" class="form-control" required="">
+            <!-- Campo para "Your Name" (columna de la mitad del ancho) -->
+            <div class="col-md-6" style="margin-bottom: 1rem;">
+              <label for="name-field" style="display: block; text-align: left; margin-bottom: 0.5rem;">
+                Your Name
+              </label>
+              <input 
+                type="text" 
+                name="name" 
+                id="name-field" 
+                class="form-control" 
+                required
+                style="padding: 1rem; font-size: 1rem; width: 100%;"
+              >
             </div>
 
-            <!-- Email -->
-            <div class="col-md-6">
-              <label for="email-field" class="pb-2" style="display: block; text-align: left;">Your Email</label>
-              <input type="email" class="form-control" name="email" id="email-field" required="">
+            <!-- Campo para "Your Email" (la otra mitad de la fila) -->
+            <div class="col-md-6" style="margin-bottom: 1rem;">
+              <label for="email-field" style="display: block; text-align: left; margin-bottom: 0.5rem;">
+                Your Email
+              </label>
+              <input 
+                type="email" 
+                name="email" 
+                id="email-field" 
+                class="form-control" 
+                required
+                style="padding: 1rem; font-size: 1rem; width: 100%;"
+              >
             </div>
 
-            <!-- Asunto -->
+            <!-- Campo para "Subject" -->
             <div class="col-md-12">
-              <label for="subject-field" class="pb-2" style="display: block; text-align: left;">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject-field" required="">
+              <label for="subject-field" style="display: block; text-align: left; margin-bottom: 0.5rem;">
+                Subject
+              </label>
+              <input 
+                type="text" 
+                name="subject" 
+                id="subject-field" 
+                class="form-control" 
+                required
+                style="padding: 1rem; font-size: 1rem; width: 100%;"
+              >
             </div>
 
-            <!-- Mensaje -->
+            <!-- Campo para "Message" -->
             <div class="col-md-12">
-              <label for="message-field" class="pb-2" style="display: block; text-align: left;">Message</label>
-              <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+              <label for="message-field" style="display: block; text-align: left; margin-bottom: 0.5rem;">
+                Message
+              </label>
+              <textarea 
+                class="form-control" 
+                name="message" 
+                id="message-field" 
+                rows="10" 
+                required
+                style="padding: 1rem; font-size: 1rem; width: 100%;"
+              ></textarea>
             </div>
 
-            <!-- Botón Enviar -->
+            <!-- Botón de Envío -->
             <div class="col-md-12 text-center">
               <div class="loading" style="display: none;">Loading</div>
               <div class="error-message" style="display: none;"></div>
@@ -497,7 +528,6 @@ I'm always open to new opportunities for collaboration and discussions on these 
                 Send Message
               </button>
             </div>
-
           </div>
         </form>
       </div>
