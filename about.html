@@ -400,93 +400,113 @@ I'm always open to new opportunities for collaboration and discussions on these 
     </div>
   </div>
 
-  </section>
+<!-- Sección: Contact -->
+<section id="contact" class="contact section">
+  <!-- Título de la sección -->
+  <div class="container section-title" data-aos="fade-up">
+    <!-- Puedes usar "Contect" si así lo deseas, pero aquí lo dejamos como "Contact" -->
+    <h2>Contact</h2>
+    <!-- Texto en inglés abajo, tal como pediste -->
+    <p>Feel free to send me a message!</p>
+  </div>
 
-  <!-- Contact Section -->
-    <section id="contact" class="contact section">
+  <!-- Contenedor principal de la sección de Contacto -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/d/viewer?mid=1qNoCNAsWR_U53N8VcYlYdtgZBcU&femb=1&ll=19.310728000000022%2C-99.18596&z=15" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- Bloque Izquierdo: Información de contacto y Mapa -->
+      <div class="col-lg-5" style="flex: 1; min-width: 300px; text-align: left;">
+        <div class="info-wrap" style="margin-bottom: 2rem;">
+          
+          <!-- Dirección -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 1rem;">
+            <!-- Ícono con Font Awesome -->
+            <i class="fa-solid fa-location-dot" style="font-size: 1.2rem; margin-right: 1rem;"></i>
+            <div>
+              <h3>Address</h3>
+              <p>A108 Adam Street, New York, NY 535022</p>
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+          <!-- Teléfono -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300" style="margin-bottom: 1rem;">
+            <i class="fa-solid fa-phone" style="font-size: 1.2rem; margin-right: 1rem;"></i>
+            <div>
+              <h3>Call Us</h3>
+              <p>+1 5589 55488 55</p>
+            </div>
+          </div>
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
+          <!-- Correo -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: 1rem;">
+            <i class="fa-solid fa-envelope" style="font-size: 1.2rem; margin-right: 1rem;"></i>
+            <div>
+              <h3>Email Us</h3>
+              <p>info@example.com</p>
+            </div>
+          </div>
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+          <!-- Mapa (ejemplo con Google Maps) -->
+          <iframe
+            src="https://www.google.com/maps/d/viewer?mid=1qNoCNAsWR_U53N8VcYlYdtgZBcU&femb=1&ll=19.310728000000022%2C-99.18596&z=15"
+            frameborder="0"
+            style="border:0; width: 100%; height: 270px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
-
       </div>
+      <!-- Fin Bloque Izquierdo -->
 
-    </section>
+      <!-- Bloque Derecho: Formulario -->
+      <div class="col-lg-7" style="flex: 1; min-width: 300px;">
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+            
+            <!-- Nombre -->
+            <div class="col-md-6">
+              <label for="name-field" class="pb-2" style="display: block; text-align: left;">Your Name</label>
+              <input type="text" name="name" id="name-field" class="form-control" required="">
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <label for="email-field" class="pb-2" style="display: block; text-align: left;">Your Email</label>
+              <input type="email" class="form-control" name="email" id="email-field" required="">
+            </div>
+
+            <!-- Asunto -->
+            <div class="col-md-12">
+              <label for="subject-field" class="pb-2" style="display: block; text-align: left;">Subject</label>
+              <input type="text" class="form-control" name="subject" id="subject-field" required="">
+            </div>
+
+            <!-- Mensaje -->
+            <div class="col-md-12">
+              <label for="message-field" class="pb-2" style="display: block; text-align: left;">Message</label>
+              <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+            </div>
+
+            <!-- Botón Enviar -->
+            <div class="col-md-12 text-center">
+              <div class="loading" style="display: none;">Loading</div>
+              <div class="error-message" style="display: none;"></div>
+              <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+              <button type="submit" style="background: black; color: white; padding: 0.7rem 1.5rem; border: none; cursor: pointer;">
+                Send Message
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <!-- Fin Bloque Derecho -->
+
+    </div>
+  </div>
+</section>
+<!-- Fin Sección: Contact -->
 
   <!-- Footer -->
   <footer>
