@@ -102,30 +102,34 @@
     .internal-menu a:hover {
       font-weight: 700;
     }
-    /* Sección: Who I Am */
-    .about-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-    .about-info .photo {
-      flex: 1 1 300px;
-      max-width: 300px;
-      margin: 1rem;
-    }
-    .about-info .photo img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .about-info .description {
-      flex: 2 1 400px;
-      margin: 1rem;
-      text-align: left;
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
+/* Sección: Who I Am */
+.about-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Mejor alineación vertical */
+  padding: 2rem;
+  flex-direction: row-reverse; /* Foto al lado derecho */
+}
+
+.about-info .photo {
+  flex: 1 1 400px;       /* Más espacio mínimo */
+  max-width: 400px;      /* Foto más grande */
+  margin: 1rem;
+}
+
+.about-info .photo img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-info .description {
+  flex: 2 1 500px;
+  margin: 1rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
     /* Sección: Resume */
     .resume {
       padding: 2rem;
@@ -306,11 +310,8 @@
     <img src="EDGAR22.png" alt="Photo">
   </div>
   <div class="description" style="text-align: justify;">
-    <h2>Who I Am</h2>
+    <h2>Hello there! ¿Qué dice esa buena vida?</h2>
     <p>
-      Hello there! ¿Qué dice esa buena vida?
-         <p>
-        </p>
       I'm Edgar Pérez Medina, an economist from Tláhuac, Mexico City. I am currently completing my Master's degree in Economics at the National Autonomous University of Mexico (UNAM), where I also earned my Bachelor's degree with a specialization in Monetary and Financial Economics. I teach macroeconomics at the Faculty of Economics at UNAM and work as a research assistant to Dr. Juan Carlos Moreno Brid, as part of the National System of Researchers under the Secretariat of Science, Humanities, Technology, and Innovation (SECIHTI).
     </p>
     <p>
